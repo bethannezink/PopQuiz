@@ -1,0 +1,194 @@
+// Place all the styles related to the Quiz controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+audio.song_player {
+  display: none;
+}
+
+body {
+  background-color: black;
+  font-family: Avenir;
+  color: white;
+}
+
+div.guess_form_holder {
+  text-align: center;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.guess_form {
+  border-radius: 8px;
+  border: none;
+  padding: 7px 10px;
+  font-family: Avenir;
+  font-size: 18px;
+  font-weight: 600;
+  border-style: round;
+  width: 35%;
+  height: 30px;
+  color: #9DCC15;
+}
+
+.guess_form:focus {
+  outline:0;
+}
+
+.submit_button {
+  border-radius: 8px;
+  border: none;
+  padding: 7px 10px;
+  background-color: #9DCC15;
+  font-family: Avenir;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border-style: round;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: 0.2%;
+  height: 43.5px;
+  width: 115px;
+}
+
+button.give_up {
+  border-radius: 8px;
+  border: none;
+  padding: 7px 10px;
+  background-color: #9DCC15;
+  font-family: Avenir;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border-style: round;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 43.5px;
+  width: 110px;
+  margin-left: 0.2%;
+}
+
+button.sidebar-button {
+  border-radius: 8px;
+  border: none;
+  padding: 7px 10px;
+  background-color: #9DCC15;
+  font-family: Avenir;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border-style: round;
+  height: 40px;
+  width: 130px;  
+  margin-bottom: 5px;
+}
+
+button:focus {
+  outline:0;
+}
+
+#am_i_right:hover {
+  background-color: #3EA9FB;
+}
+
+#give_up:hover {
+  background-color: #E74470;
+}
+
+#new_clip:hover {
+  background-color: #805EC8;
+}
+
+h1 {
+  font-size: 45px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+#score {
+  position: fixed;
+  top: 0%;
+  left: 85%;
+}
+span.green {
+  color: #9DCC15;
+  font-size: 30px;
+}
+
+span.pink {
+  color: #E74470;
+  font-size:30px;
+}
+
+.number-score {
+  font-size: 23px;
+}
+
+#wrapper{
+  width: 100%;
+}
+
+.score-let {
+  font-size: 25px;
+}
+
+#sidebar {
+  margin-left: 1px;
+}
+
+span#play_clip {
+  margin-right: 10px;
+}
+
+#play_clip {
+  color: #9DCC15;
+  font-size: 45px;
+}
+
+#play_clip:hover {
+  color: #805EC8;
+}
+
+#directions {
+  margin-top: 90px;
+  text-align: center;
+  font-size: 25px;  
+}
+
+section#footer {
+  text-align: center;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0px;
+  font-family: Avenir;
+  font-weight: 100;
+  font-size: 14px;
+}
+
+.sunshine {
+  color: #F08F33;
+  font-size: 15px;
+}
+
+.sunshine:hover {
+}
+
+#my-name {
+  color: white;
+  text-decoration: none;  
+}
+
+#my-name:hover {
+  color: #9DCC15;
+}
