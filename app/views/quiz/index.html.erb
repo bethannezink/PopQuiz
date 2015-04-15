@@ -1,30 +1,55 @@
 
 
-<audio class="song_player" id="random_song" data-song="<%= @song.name %>" controls> 
+<audio class="song_player" id="random_song" data-song="<%= @song.name %>" controls preload> 
    <source src="<%=@song.preview_url%>#t=29.4,30" type="audio/mpeg">
 </audio>
 
 <section id="header">
-  <h1>PopQuiz</h1>
+  <h1><%= link_to "PopQuiz", "http://www.github.com", :id => "code_link" %></h1>
   <div id="score">
-    <h3><span class="score-let">Score:</span>&nbsp;<span class="green">&#x2713;</span>&nbsp;<span class="number-score"><%= 0 %></span>&nbsp;&nbsp;<span class="pink">&#x2717;</span><span class="number-score"> <%= 0 %></span></h3>
+    <h3><span class="score-let">Score:</span>&nbsp;<span class="green">&#x2713;</span>&nbsp;<span class="number-score"><%= @current_player.number_correct %></span>&nbsp;&nbsp;<span class="pink">&#x2717;</span><span class="number-score"> <%= @current_player.number_incorrect  %></span></h3>
   </div>
+
 </section>
 
 <section id="wrapper">
-  <div id="directions">Click on the music note to play</div>
+  <div id="directions">Click on the music note to play a song clip</div>
+  <div id="directions-2">Enter your guess</div>
+  <div id="sub-directions-2">(it's cool, you can listen to the clip again)</div>
     <div class="guess_form_holder">
-      <%= form_tag("/guess", method: "GET") do %>
+      <%= form_tag("/guess", method: "GET", :remote => true) do %>
         <span id="play_clip">&#9834;</span>
-        <%= text_field_tag(:guess, nil, :class => "guess_form", :placeholder => "Name the tune...", :autofocus => "true", navigation: "none") %>
+        <%= text_field_tag(:guess, nil, :class => "guess_form", :placeholder => "Name the tune...", :autofocus => "true", navigation: "none", autocomplete: "off") %>
+        <%= hidden_field_tag "song_id", "#{@song.id}" %>
         <%= submit_tag("Am I Right?", :class => "submit_button", :id => "am_i_right") %>
         <%= button_tag "I Give Up.", {class: "give_up", id: "give_up", navigation: "none"} %>
       <% end %>
     </div>
 </section>
 
+  <section id="you_did_it">
+    <div class="you_did_it_text">You Did It!</div>
+  </section>
 
-<section id="footer">
-Made with <span class="sunshine">&#9728;</span> by <%= link_to "Bethanne Zink", "https://github.com/bethannezink", :id => "my-name" %>
+  <section id="try_again">
+    <div class="fun_text">Nope.</div>
+  </section>
+
+<section id="wrapper-2">
+  <div class="song_name">"<%= link_to "#{@song.name}", @song.full_song_url, id: "song_name" %>"</div>
+  <div class="artist_name">by <span id="artist_name"><%= @song.artist %></span></div>
+  <div class="album_name">from <%= link_to "#{@album.name}", @album.full_album_url, id: "album_name" %></div><br>
+  <div id="album_cover">
+  <%= link_to @album.full_album_url do %>
+    <%= image_tag @album.image_url %>
+  <% end %><br><br>
+  <%= button_to "Play Again", "/", {remote: true, method: "get", class: "play_again", id: "play_again", navigation: "none"} %>
+  </div>  
+
 </section>
 
+
+<section id="footer">
+Made with <span class="sunshine">&#9728;</span> by <%= link_to "Bethanne Zink", "https://github.com/bethannezink", :id => "my-name" %><br>
+<span id="thanks_spotify">using the <%= link_to "https://www.spotify.com" do %> <%= image_tag "spotify.png" %> <span id="spot_link"> API </span> <% end %></span>
+</section>

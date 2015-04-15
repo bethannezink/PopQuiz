@@ -1,12 +1,111 @@
 $(function(){
-  $("span#play_clip").click(playClip);
+  beginGame();
+  $("#give_up").click(iGiveUp); 
+  $("#am_i_right").click(checkAnswer); 
+  $("#play_again").click(playAgain);
 });
+
+function beginGame() {
+  $("#wrapper-2").hide();
+  $("#directions-2").hide();
+  $("#sub-directions-2").hide();
+  $("#try_again").hide();
+  $("span#play_clip").click(playClip);
+  $("#you_did_it").hide();
+  $("#try_again").hide();
+}
 
 function playClip() {
   var $clip = $("#random_song")[0];
   $clip.play();
   $clip.currentTime=29.4;
-  $("#directions").fadeOut(2000, function(){
-    $("#directions").remove();
-  })
+
+  $("#directions").fadeOut(900, function(){
+  $("#directions-2").fadeIn(1300);
+  $("#sub-directions-2").fadeIn(4000);
+  });
 }
+
+function checkAnswer(e){
+  e.preventDefault();
+  e.stopPropagation();
+
+  if($('#guess').val().length >= 1){
+    $button = $(this)
+    var url = $button.parent().attr("action");
+    var method = $button.parent().attr("method");
+    var data = $button.parent().serialize();
+
+    $.ajax({
+      url: url,
+      method: method,
+      data: data, 
+      dataType: "script", 
+    })
+  } 
+}
+
+  var $form = $("form#new_list"); 
+  var url = $form.attr("action");
+  var method = $form.attr("method");
+  var data = $form.serialize();
+
+function playAgain(){
+    $("#guess").val("");
+    $("#you_did_it").hide();
+    $("#wrapper").show();
+    $("#wrapper-2").hide();
+
+    location.reload();
+    $("#directions-2").hide();
+    $("#sub-directions-2").hide();
+    $("#directions").show();
+
+    // try to get content to reload without reloading page
+    // var url = "/";
+    // var method = "get"
+
+    // $.ajax({
+    //   url: url,
+    //   method: method,
+    //   dataType: "script"
+    // })
+}
+
+function iGiveUp(e){
+  e.preventDefault();
+  e.stopPropagation();
+
+  $("#wrapper-2").show();
+  $("#wrapper").hide();
+  var $clip = $("#random_song")[0];
+  $clip.currentTime=0;
+  $clip.play();
+  // setTimeout(function() { $clip.play(); }, 400);
+}
+
+function correctAnswer(){
+  $("#wrapper").hide();
+  $("#try_again").hide();
+  $("#you_did_it").show();
+  setTimeout(function() { $("#you_did_it").hide(); }, 800);
+  setTimeout(function() { $("#wrapper-2").fadeIn("slow"); }, 800);
+  $("#guess").val("");
+  var $clip = $("#random_song")[0];
+  $clip.currentTime=0;
+  setTimeout(function() { $clip.play(); }, 800);
+}
+
+function incorrectAnswer(){
+  $("#you_did_it").hide();
+  $("#wrapper").hide();
+  $("#try_again").show();
+  setTimeout(function() { $("#try_again").hide(); }, 1300);
+  setTimeout(function() { $("#wrapper-2").fadeIn("slow"); }, 1300);
+  $("#guess").val("");
+  var $clip = $("#random_song")[0];
+  $clip.currentTime=0;
+  $clip.play();
+  // setTimeout(function() { $clip.play(); }, 400);
+}
+

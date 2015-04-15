@@ -6,6 +6,11 @@ audio.song_player {
   display: none;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 body {
   background-color: black;
   font-family: Avenir;
@@ -59,6 +64,9 @@ div.guess_form_holder {
   width: 115px;
 }
 
+.submit_button:focus {
+  outline: 0;
+}
 button.give_up {
   border-radius: 8px;
   border: none;
@@ -78,7 +86,7 @@ button.give_up {
   margin-left: 0.2%;
 }
 
-button.sidebar-button {
+input.play_again {
   border-radius: 8px;
   border: none;
   padding: 7px 10px;
@@ -88,8 +96,12 @@ button.sidebar-button {
   font-weight: 600;
   color: white;
   border-style: round;
-  height: 40px;
-  width: 130px;  
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 43.5px;
+  width: 110px;
   margin-bottom: 5px;
 }
 
@@ -110,7 +122,7 @@ button:focus {
 }
 
 h1 {
-  font-size: 45px;
+  font-size: 50px;
   margin-top: 5px;
   margin-left: 5px;
 }
@@ -134,8 +146,13 @@ span.pink {
   font-size: 23px;
 }
 
-#wrapper{
+#wrapper {
   width: 100%;
+}
+
+#wrapper-2 {
+  width: 100%;
+  z-index: -1;
 }
 
 .score-let {
@@ -148,6 +165,10 @@ span.pink {
 
 span#play_clip {
   margin-right: 10px;
+    -webkit-transition: all 0.0s ;
+    -moz-transition: all 0.0s ;
+    -o-transition: all 0.0s ;
+    transition: all 0.0s;
 }
 
 #play_clip {
@@ -156,13 +177,85 @@ span#play_clip {
 }
 
 #play_clip:hover {
+  color: #F08F33;
+}
+
+#album_cover {
+  text-align: center;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#song_name {
+  text-decoration: none;
+  color: white;
+  font-size: 38px;
+  text-align: center;
+}
+
+.song_name {
+  text-decoration: none;
+  color: white;
+  font-size: 38px;
+  text-align: center;
+}
+
+#album_name {
+  text-decoration: none;
+  color: white;
+  font-size: 28px;
+  text-align: center;
+  font-style: italic;
+}
+
+#album_name:hover {
   color: #805EC8;
+}
+
+.album_name {
+  font-size: 20px;
+  text-align: center;
+}
+
+#song_name:hover {
+    color: #9DCC15;
+}
+
+.artist_name {
+  font-size: 20px;
+  text-align: center;
+}
+
+#artist_name {
+  font-size: 28px;
+  text-align: center;
+}
+
+#album_cover{
+  position:relative;
+  text-align: center;
 }
 
 #directions {
   margin-top: 90px;
   text-align: center;
+  font-size: 25px;   
+}
+#directions-2 {
+  margin-top: 90px;
+  text-align: center;
   font-size: 25px;  
+}
+
+#sub-directions-2 {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 13px;
 }
 
 section#footer {
@@ -190,5 +283,56 @@ section#footer {
 }
 
 #my-name:hover {
+  color: #9DCC15;
+}
+
+#you_did_it {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#try_again {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fun_text {
+  font-family: Avenir;  
+  font-size: 75px;
+  color: #E74470;
+  font-weight: 800;
+  left: 0;
+    line-height: 200px;
+    margin: auto;
+    margin-top: -100px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.you_did_it_text {
+  font-family: Avenir;  
+  font-size: 75px;
+  color: #E74470;
+  font-weight: 800;
+  left: 0;
+  line-height: 200px;
+  margin: auto;
+  margin-top: -100px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 1000;
+}
+
+.thanks_spotify {
+  font-size: 8px;
+}
+
+#spot_link:hover {
+  color: #F08F33;
+}
+
+#code_link:hover {
   color: #9DCC15;
 }

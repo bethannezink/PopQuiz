@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150404234449) do
+ActiveRecord::Schema.define(version: 20150415052240) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20150404234449) do
     t.string   "full_album_url"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.integer  "number_correct",   default: 0
+    t.integer  "number_incorrect", default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "songs", force: :cascade do |t|
