@@ -18,7 +18,7 @@ function beginGame() {
 function playClip() {
   var $clip = $("#random_song")[0];
   $clip.play();
-  $clip.currentTime=29.4;
+  $clip.currentTime=29;
 
   $("#directions").fadeOut(900, function(){
   $("#directions-2").fadeIn(1300);
