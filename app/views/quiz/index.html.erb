@@ -5,7 +5,7 @@
 </audio>
 
 <section id="header">
-  <h1><%= link_to "PopQuiz", "http://www.github.com", :id => "code_link" %></h1>
+  <h1><%= link_to "PopQuiz", "https://github.com/bethannezink/PopQuiz", :id => "code_link" %></h1>
   <div id="score">
     <h3><span class="score-let">Score:</span>&nbsp;<span class="green">&#x2713;</span>&nbsp;<span class="number-score"><%= @current_player.number_correct %></span>&nbsp;&nbsp;<span class="pink">&#x2717;</span><span class="number-score"> <%= @current_player.number_incorrect  %></span></h3>
   </div>
@@ -51,5 +51,5 @@
 
 <section id="footer">
 Made with <span class="sunshine">&#9728;</span> by <%= link_to "Bethanne Zink", "https://github.com/bethannezink", :id => "my-name" %><br>
-<span id="thanks_spotify">using the <%= link_to "https://www.spotify.com" do %> <%= image_tag "spotify.png" %> <span id="spot_link"> API </span> <% end %></span>
+<span id="thanks_spotify">using the <%= link_to "https://developer.spotify.com/web-api/" do %> <%= image_tag "spotify.png" %> <span id="spot_link"> API </span> <% end %></span>
 </section>

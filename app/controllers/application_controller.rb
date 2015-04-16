@@ -5,12 +5,9 @@ class ApplicationController < ActionController::Base
 
   private
     def current_player
-      # binding.pry
       if session[:player_id].present?
-        # binding.pry
         @current_player ||= Player.find(session[:player_id])
       else
-        # binding.pry
         @current_player = Player.create
         session[:player_id] = @current_player.id
       end
