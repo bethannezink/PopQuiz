@@ -1,12 +1,14 @@
 class GuessController < ApplicationController
+
   before_action :current_player 
 
   def index
-    if Song.find_by("name LIKE ?", "%#{params[:guess]}%" )
-      @guess = Song.find_by("name LIKE ?", "%#{params[:guess]}%" )
+    if Song.find(:conditions => ["name LIKE ?", "%#{params[:guess]}%")  #Song.find_by("name LIKE ?", "%#{params[:guess]}%")
+      @guess = Song.find(:conditions => ["name LIKE ?", "%#{params[:guess]}%") 
       @song = Song.find(params[:song_id])
       if @guess.id == @song.id
         current_player.add_point
+
           respond_to do |f|
             f.html { redirect_to }
             f.js { }

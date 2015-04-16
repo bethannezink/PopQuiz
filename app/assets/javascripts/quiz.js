@@ -79,7 +79,7 @@ function iGiveUp(e){
   $("#wrapper-2").show();
   $("#wrapper").hide();
   var $clip = $("#random_song")[0];
-  $clip.currentTime=0;
+  $clip.currentTime=5;
   $clip.play();
   // setTimeout(function() { $clip.play(); }, 400);
 }
@@ -92,7 +92,7 @@ function correctAnswer(){
   setTimeout(function() { $("#wrapper-2").fadeIn("slow"); }, 800);
   $("#guess").val("");
   var $clip = $("#random_song")[0];
-  $clip.currentTime=0;
+  $clip.currentTime=5;
   setTimeout(function() { $clip.play(); }, 800);
 }
 
@@ -104,8 +104,16 @@ function incorrectAnswer(){
   setTimeout(function() { $("#wrapper-2").fadeIn("slow"); }, 1300);
   $("#guess").val("");
   var $clip = $("#random_song")[0];
-  $clip.currentTime=0;
+  $clip.currentTime=5;
   $clip.play();
   // setTimeout(function() { $clip.play(); }, 400);
 }
 
+
+// var $clip = $("#random_song")[0];
+// $clip.currentTime=5;
+// $clip.play();
+// setTimeout(function() { $clip.pause(); }, 200);
+
+// var num = 200
+// on click 

@@ -41,7 +41,7 @@
   <div class="album_name">from <%= link_to "#{@album.name}", @album.full_album_url, id: "album_name" %></div><br>
   <div id="album_cover">
   <%= link_to @album.full_album_url do %>
-    <%= image_tag @album.image_url %>
+    <%= image_tag(@album.image_url, height:300, width: 300) %>
   <% end %><br><br>
   <%= button_to "Play Again", "/", {remote: true, method: "get", class: "play_again", id: "play_again", navigation: "none"} %>
   </div>  

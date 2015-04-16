@@ -13,3 +13,5 @@ api.build_songs(50..99)
 api.build_songs(100..149)
 api.build_songs(150..198)
 api.build_songs(198..200)
+
+# top 40? + more common ones: make arrays of the 
