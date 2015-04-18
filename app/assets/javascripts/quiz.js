@@ -59,6 +59,8 @@ function playAgain(){
     $("#wrapper-2").hide();
 
     location.reload();
+    var $clip = $("#random_song")[0];
+    $clip.pause();
     $("#directions-2").hide();
     $("#sub-directions-2").hide();
     $("#directions").show();
