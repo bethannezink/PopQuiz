@@ -17,13 +17,15 @@ function beginGame() {
 
 function playClip() {
   var $clip = $("#random_song")[0];
+  $clip.currentTime=5;
   $clip.play();
-  $clip.currentTime=29;
+  setTimeout(function() { $clip.pause(); }, 900);
 
   $("#directions").fadeOut(900, function(){
   $("#directions-2").fadeIn(1300);
   $("#sub-directions-2").fadeIn(4000);
   });
+
 }
 
 function checkAnswer(e){
@@ -81,7 +83,7 @@ function iGiveUp(e){
   var $clip = $("#random_song")[0];
   $clip.currentTime=5;
   $clip.play();
-  // setTimeout(function() { $clip.play(); }, 400);
+  setTimeout(function() { $clip.play(); }, 100);
 }
 // make ajax call to guess controller, but wihtout params guess, so point is automatically deducted
 
@@ -94,7 +96,7 @@ function correctAnswer(){
   $("#guess").val("");
   var $clip = $("#random_song")[0];
   $clip.currentTime=5;
-  setTimeout(function() { $clip.play(); }, 800);
+  setTimeout(function() { $clip.play(); }, 100);
 }
 
 function incorrectAnswer(){
@@ -107,14 +109,6 @@ function incorrectAnswer(){
   var $clip = $("#random_song")[0];
   $clip.currentTime=5;
   $clip.play();
-  // setTimeout(function() { $clip.play(); }, 400);
+  setTimeout(function() { $clip.play(); }, 100);
 }
 
-
-// var $clip = $("#random_song")[0];
-// $clip.currentTime=5;
-// $clip.play();
-// setTimeout(function() { $clip.pause(); }, 200);
-
-// var num = 200
-// on click 
