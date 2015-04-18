@@ -2,8 +2,8 @@ class GuessController < ApplicationController
   before_action :current_player 
 
   def index
-    if Song.where("name LIKE ?", "%#{params[:guess]}%").limit(1) # Song.find(:conditions => ["name LIKE ?", "%#{params[:guess]}%])
-      @guess = Song.where("name LIKE ?", "%#{params[:guess]}%").limit(1)
+    if Song.find_by("LOWER(name) LIKE ?", "%#{params[:guess].downcase}%") # Song.find(:conditions => ["name LIKE ?", "%#{params[:guess]}%])
+      @guess = Song.find_by("LOWEr(name) LIKE ?", "%#{params[:guess].downcase}%")
       @song = Song.find(params[:song_id])
       if @guess.id == @song.id
         current_player.add_point
