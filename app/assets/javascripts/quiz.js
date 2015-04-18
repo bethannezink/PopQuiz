@@ -83,6 +83,7 @@ function iGiveUp(e){
   $clip.play();
   // setTimeout(function() { $clip.play(); }, 400);
 }
+// make ajax call to guess controller, but wihtout params guess, so point is automatically deducted
 
 function correctAnswer(){
   $("#wrapper").hide();
