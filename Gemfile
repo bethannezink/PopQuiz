@@ -24,7 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 
 # Good postgres search
-gem 'texticle', "2.0", :require => 'texticle/rails'
+gem 'texticle'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
