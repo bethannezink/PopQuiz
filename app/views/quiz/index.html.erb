@@ -36,9 +36,9 @@
   </section>
 
 <section id="wrapper-2">
-  <div class="song_name">"<%= link_to "#{@song.name}", @song.full_song_url, id: "song_name" %>"</div>
+  <div class="song_name">"<%= link_to "#{@song.name}", @song.full_song_url, id: "song_name", target: "_blank" %>"</div>
   <div class="artist_name">by <span id="artist_name"><%= @song.artist %></span></div>
-  <div class="album_name">from <%= link_to "#{@album.name}", @album.full_album_url, id: "album_name" %></div><br>
+  <div class="album_name">from <%= link_to "#{@album.name}", @album.full_album_url, id: "album_name", target: "_blank" %></div><br>
   <div id="album_cover">
   <%= link_to @album.full_album_url do %>
     <%= image_tag(@album.image_url, height:300, width: 300) %>
@@ -50,6 +50,6 @@
 
 
 <section id="footer">
-Made with <span class="sunshine">&#9728;</span> by <%= link_to "Bethanne Zink", "https://github.com/bethannezink", :id => "my-name" %><br>
-<span id="thanks_spotify">using the <%= link_to "https://developer.spotify.com/web-api/" do %> <%= image_tag "spotify.png" %> <span id="spot_link"> API </span> <% end %></span>
+Made with <span class="sunshine">&#9728;</span> by <%= link_to "Bethanne Zink", "https://github.com/bethannezink", :id => "my-name", target: "_blank" %><br>
+<span id="thanks_spotify">using the <%= link_to "https://developer.spotify.com/web-api/", target: "_blank" do %> <%= image_tag "spotify.png" %> <span id="spot_link"> API </span> <% end %></span>
 </section>
