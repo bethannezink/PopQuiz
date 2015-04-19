@@ -48,17 +48,17 @@ function checkAnswer(e){
 }
 
 function playAgain(){
-    $("#guess").val("");
-    $("#you_did_it").hide();
-    $("#wrapper").show();
-    $("#wrapper-2").hide();
+  $("#guess").val("");
+  $("#you_did_it").hide();
+  $("#wrapper").show();
+  $("#wrapper-2").hide();
 
-    location.reload();
-    var $clip = $("#random_song")[0];
-    $clip.pause();
-    $("#directions-2").hide();
-    $("#sub-directions-2").hide();
-    $("#directions").show();
+  location.reload();
+  var $clip = $("#random_song")[0];
+  $clip.pause();
+  $("#directions-2").hide();
+  $("#sub-directions-2").hide();
+  $("#directions").show();
 }
 
 function iGiveUp(e){
@@ -67,10 +67,7 @@ function iGiveUp(e){
 
   $("#wrapper-2").show();
   $("#wrapper").hide();
-  var $clip = $("#random_song")[0];
-  $clip.currentTime=5;
-  $clip.play();
-  setTimeout(function() { $clip.play(); }, 50);
+  handleClip();
 }
 
 function correctAnswer(){
@@ -80,9 +77,7 @@ function correctAnswer(){
   setTimeout(function() { $("#you_did_it").hide(); }, 800);
   setTimeout(function() { $("#wrapper-2").fadeIn("slow"); }, 800);
   $("#guess").val("");
-  var $clip = $("#random_song")[0];
-  $clip.currentTime=5;
-  setTimeout(function() { $clip.play(); }, 50);
+  handleClip();
 }
 
 function incorrectAnswer(){
@@ -92,10 +87,7 @@ function incorrectAnswer(){
   setTimeout(function() { $("#try_again").hide(); }, 1300);
   setTimeout(function() { $("#wrapper-2").fadeIn("slow"); }, 1300);
   $("#guess").val("");
-  var $clip = $("#random_song")[0];
-  $clip.currentTime=5;
-  $clip.play();
-  setTimeout(function() { $clip.play(); }, 50);
+  handleClip();
 }
 
 $(function(){
@@ -106,5 +98,11 @@ $(function(){
     }, 100);
   });
 
-
-
+function handleClip(){
+  var $clip = $("#random_song")[0];
+  $clip.currentTime=5;
+  // $clip.play();
+  setTimeout(function() { $clip.play(); }, 25);
+  setTimeout(function() { $clip.pause(); }, 25000);
+  setTimeout(function() { location.reload(); }, 25000);
+}

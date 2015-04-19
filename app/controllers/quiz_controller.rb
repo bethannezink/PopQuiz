@@ -9,10 +9,5 @@ before_action :current_player
     
   end
 
-  def update_score
-    respond_to do |f|
-      f.js { }
-    end
-  end
 end
 

@@ -28,7 +28,7 @@ class SpotifyService
     get_track_info(song_range).each do |song|
       songy = Song.new
       songy.name = song["name"]
-      songy.artist = song["artists"][0]["name"]
+      songy.artist = Artist.find_or_create_by(:name => song["artists"][0]["name"], :artist_url => song["artists"][0]["external_urls"]["spotify"])
       songy.full_song_url = song["external_urls"]["spotify"]
       songy.preview_url = song["preview_url"]
       songy.album = Album.find_or_create_by(:name => song["album"]["name"], :full_album_url => song["album"]["external_urls"]["spotify"], :image_url => song["album"]["images"][1]["url"])
