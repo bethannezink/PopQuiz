@@ -1,5 +1,3 @@
-
-
 <audio class="song_player" id="random_song" data-song="<%= @song.name %>" controls preload= "auto"> 
    <source src="<%=@song.preview_url%>#t=29,30" type="audio/mpeg">
 </audio>
@@ -7,7 +5,7 @@
 <section id="header">
   <h1><%= link_to "PopQuiz", "https://github.com/bethannezink/PopQuiz", :id => "code_link" %></h1>
   <div id="score">
-    <h3><span class="score-let">Score:</span>&nbsp;<span class="green">&#x2713;</span>&nbsp;<span class="number-score"><%= @current_player.number_correct %></span>&nbsp;&nbsp;<span class="pink">&#x2717;</span><span class="number-score"> <%= @current_player.number_incorrect  %></span></h3>
+    <%= render :partial => 'quiz/score' %>
   </div>
 
 </section>

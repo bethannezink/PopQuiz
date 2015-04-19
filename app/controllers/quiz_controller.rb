@@ -7,6 +7,12 @@ before_action :current_player
     @song = Song.find((252..452).to_a.sample)
     @album = @song.album
     
-    # can change difficulty level if desired 
+  end
+
+  def update_score
+    respond_to do |f|
+      f.js { }
+    end
   end
 end
+

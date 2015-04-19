@@ -47,11 +47,6 @@ function checkAnswer(e){
   } 
 }
 
-  var $form = $("form#new_list"); 
-  var url = $form.attr("action");
-  var method = $form.attr("method");
-  var data = $form.serialize();
-
 function playAgain(){
     $("#guess").val("");
     $("#you_did_it").hide();
@@ -64,16 +59,6 @@ function playAgain(){
     $("#directions-2").hide();
     $("#sub-directions-2").hide();
     $("#directions").show();
-
-    // try to get content to reload without reloading page
-    // var url = "/";
-    // var method = "get"
-
-    // $.ajax({
-    //   url: url,
-    //   method: method,
-    //   dataType: "script"
-    // })
 }
 
 function iGiveUp(e){
@@ -85,9 +70,8 @@ function iGiveUp(e){
   var $clip = $("#random_song")[0];
   $clip.currentTime=5;
   $clip.play();
-  setTimeout(function() { $clip.play(); }, 100);
+  setTimeout(function() { $clip.play(); }, 50);
 }
-// make ajax call to guess controller, but wihtout params guess, so point is automatically deducted
 
 function correctAnswer(){
   $("#wrapper").hide();
@@ -98,7 +82,7 @@ function correctAnswer(){
   $("#guess").val("");
   var $clip = $("#random_song")[0];
   $clip.currentTime=5;
-  setTimeout(function() { $clip.play(); }, 100);
+  setTimeout(function() { $clip.play(); }, 50);
 }
 
 function incorrectAnswer(){
@@ -111,6 +95,16 @@ function incorrectAnswer(){
   var $clip = $("#random_song")[0];
   $clip.currentTime=5;
   $clip.play();
-  setTimeout(function() { $clip.play(); }, 100);
+  setTimeout(function() { $clip.play(); }, 50);
 }
+
+$(function(){
+  setInterval(function() {
+      $.ajax({
+        url: "/update_score",
+      });
+    }, 100);
+  });
+
+
 
