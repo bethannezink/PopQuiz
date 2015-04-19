@@ -35,7 +35,7 @@
 
 <section id="wrapper-2">
   <div class="song_name">"<%= link_to "#{@song.name}", @song.full_song_url, id: "song_name", target: "_blank" %>"</div>
-  <div class="artist_name">by <span id="artist_name"><%= @song.artist %></span></div>
+  <div class="artist_name">by <span id="artist_name"><%= @artist.name %></span></div>
   <div class="album_name">from <%= link_to "#{@album.name}", @album.full_album_url, id: "album_name", target: "_blank" %></div><br>
   <div id="album_cover">
   <%= link_to @album.full_album_url do %>
