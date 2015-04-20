@@ -226,6 +226,10 @@ span#play_clip {
     color: #9DCC15;
 }
 
+.song_name:hover {
+    color: #9DCC15;
+}
+
 .artist_name {
   font-size: 20px;
   text-align: center;
@@ -234,6 +238,10 @@ span#play_clip {
 #artist_name {
   font-size: 28px;
   text-align: center;
+}
+
+#artist_name:hover {
+  color: #F08F33;
 }
 
 #album_cover{
