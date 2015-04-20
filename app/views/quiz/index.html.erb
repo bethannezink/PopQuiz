@@ -43,11 +43,10 @@
   <% end %><br><br>
   <%= button_to "Play Again", "/", {remote: true, method: "get", class: "play_again", id: "play_again", navigation: "none"} %>
   </div>  
-
 </section>
 
 
 <section id="footer">
-Made with <span class="sunshine">&#9728;</span> by <%= link_to "Bethanne Zink", "https://github.com/bethannezink", :id => "my-name", target: "_blank" %><br>
+Made with <%= link_to "https://open.spotify.com/track/1va0w9M5N3w2xhCeXGQAZ0", target: "_blank" do %> <span class="sunshine">&#9728;</span> <% end %> by <%= link_to "Bethanne Zink", "https://github.com/bethannezink", :id => "my-name", target: "_blank" %><br>
 <span id="thanks_spotify">using the <%= link_to "https://developer.spotify.com/web-api/", target: "_blank" do %> <%= image_tag "spotify.png" %> <span id="spot_link"> API </span> <% end %></span>
 </section>
