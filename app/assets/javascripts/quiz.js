@@ -89,6 +89,7 @@ function incorrectAnswer(){
   handleClip();
 }
 
+// Look into if you can put this in the function
 $(function(){
   setInterval(function() {
       $.ajax({
