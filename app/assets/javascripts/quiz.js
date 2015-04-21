@@ -19,7 +19,7 @@ function playClip() {
   var $clip = $("#random_song")[0];
   $clip.currentTime=5;
   $clip.play();
-  setTimeout(function() { $clip.pause(); }, 900);
+  setTimeout(function() { $clip.pause(); }, 1200);
 
   $("#directions").fadeOut(900, function(){
   $("#directions-2").fadeIn(1300);
