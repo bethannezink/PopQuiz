@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get "/guess" => "guess#index"
 
-  get "/update_score" => "quiz/update_score"
+  get "/update_score" => "quiz#update_score"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
