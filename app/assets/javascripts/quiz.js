@@ -101,7 +101,6 @@ function incorrectAnswer(){
 function handleClip(){
   var $clip = $("#random_song")[0];
   $clip.currentTime=5;
-  // $clip.play();
   setTimeout(function() { $clip.play(); }, 25);
   setTimeout(function() { $clip.pause(); }, 25000);
   setTimeout(function() { location.reload(); }, 25000);
