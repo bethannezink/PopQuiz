@@ -25,7 +25,6 @@ function playClip() {
   $("#directions-2").fadeIn(1300);
   $("#sub-directions-2").fadeIn(4000);
   });
-
 }
 
 function checkAnswer(e){
@@ -96,7 +95,7 @@ $(function(){
         url: "/update_score",
       });
     }, 100);
-  });
+});
 
 function handleClip(){
   var $clip = $("#random_song")[0];
