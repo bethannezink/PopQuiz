@@ -37,7 +37,7 @@ class SpotifyService
   # end
 
     def get_track_info(array)
-    data = JSON.parse(open("https://api.spotify.com/v1/tracks?ids=#array}").read)
+    data = JSON.parse(open("https://api.spotify.com/v1/tracks?ids=#{array}").read)
     data["tracks"]
   end
 
