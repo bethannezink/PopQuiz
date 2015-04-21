@@ -90,13 +90,13 @@ function incorrectAnswer(){
   handleClip();
 }
 
-// $(function(){
-//   setInterval(function() {
-//       $.ajax({
-//         url: "/update_score",
-//       });
-//     }, 100);
-//   });
+$(function(){
+  setInterval(function() {
+      $.ajax({
+        url: "/update_score",
+      });
+    }, 100);
+  });
 
 function handleClip(){
   var $clip = $("#random_song")[0];

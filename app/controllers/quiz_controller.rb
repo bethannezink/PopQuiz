@@ -8,5 +8,11 @@ before_action :current_player
     @album = @song.album
   end
 
+  def update_score
+    respond_to do |f|
+      f.js { }
+    end
+  end
+
 end
 
